@@ -14,7 +14,7 @@ export function Mint() {
   const {
     count, balance, collection, address,
     tag, quantity, royalties, minted, 
-    limited, starPrice, mintPrice,
+    limited, starPrice, mintPrice, isInsufficientBalance,
     isMinting, onMint, onCountChange
   } = useMint();
 
@@ -59,7 +59,7 @@ export function Mint() {
             quantity={quantity}
             royalties={royalties}
             pricePerToken={starPrice}
-            isMintButtonDisabled={!count || isMinting}
+            isMintButtonDisabled={!count || isMinting || isInsufficientBalance}
             mintButtonDisabledLabel={isMinting ? 'Minting...' : 'Mint'}
           />}
       </Box>

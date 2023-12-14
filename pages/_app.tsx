@@ -42,6 +42,7 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
 
   return (
     <ThemeProvider>
+      {/* @ts-ignore */}
       <ChainProvider
         chains={chains}
         assetLists={assets}
@@ -63,6 +64,7 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
       >
         <QueryClientProvider client={queryClient}>
           <Box className={themeClass} minHeight="100dvh" backgroundColor={useColorModeValue('$white', '$background')}>
+            {/* @ts-ignore */}
             <Component {...pageProps} />
           </Box>
         </QueryClientProvider>

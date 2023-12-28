@@ -4,7 +4,6 @@ import type { AppProps } from 'next/app';
 import { ChainProvider } from '@cosmos-kit/react';
 import { wallets as leap } from '@cosmos-kit/leap';
 import { wallets as keplr } from '@cosmos-kit/keplr';
-import { wallets as cosmostation } from '@cosmos-kit/cosmostation';
 import { chains, assets } from 'chain-registry';
 import { getSigningCosmosClientOptions } from 'stargaze-query';
 import { GasPrice } from '@cosmjs/stargate';
@@ -46,7 +45,7 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
       <ChainProvider
         chains={chains}
         assetLists={assets}
-        wallets={[...keplr, ...cosmostation, ...leap]}
+        wallets={[...keplr, ...leap]}
         walletConnectOptions={{
           signClient: {
             projectId: 'a8510432ebb71e6948cfd6cde54b70f7',
